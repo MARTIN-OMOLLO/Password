@@ -11,7 +11,7 @@ class User:
     #Class Details
     #global users_list
     users_list = []
-	def __init__(self,first_name,last_name,password):
+	def __init__(self,first_name,last_name,user_name,password):
 		'''
 		Method to define the properties/characteristics for each user details input.
 		'''
@@ -28,4 +28,5 @@ class Credentials:
     '''
     Class to create users credentials
     '''
-    
+    def __init__(self,first_name,last_name,user_name,password):
+        ''''
