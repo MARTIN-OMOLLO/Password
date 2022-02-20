@@ -1,7 +1,7 @@
 import string
 from random import *
-from user_credential import User
-from user_credential import Credentials
+from user import User
+from user import Credentials
 
 
 def create_user(firstname, lastname, username, userpassword):
@@ -25,8 +25,8 @@ def display_users():
     return User.display_users()
 
 
-def create_account(account_username, account_name, account_password):
-    newaccount = Credentials(account_username, account_name, account_password)
+def create_account(accountusername, accountname, accountpassword):
+    newaccount = Credentials(accountusername, accountname, accountpassword)
     return newaccount
 
 
@@ -48,12 +48,12 @@ def display_accounts():
 
 def main():
     while True:
-        print("Welcome to Password Vault write Sign Up or Log In to start")
+        print("Welcome to Password Vault write sign up or Log in to start")
         print("Sign Up -or- Log In")
         option = input()
         if option == "Sign Up":
             print("Create Account")
-            print("-" * 10)
+            print("-" * 8)
             print("Enter your First Name..")
             firstname = input()
             print("Enter your Last Name..")
@@ -77,13 +77,13 @@ def main():
             loginPassword = input()
             if find_user(loginPassword):
                 print("\n")
-                print("you can create multiple accounts (Create Another) and also view them (View your  Account Details)")
+                print("you can create multiple accounts (Create Account) and also view them (View Account)")
                 print("-" * 30)
-                print("Create Another Account -or- View your Account Details")
+                print("Create Account -or- View Account")
                 choose = input()
                 print("\n")
-                if choose == "Create Another Account":
-                    print("Add Your credential of the Account")
+                if choose == "Create Account":
+                    print("Add Your Account Credentials")
                     print("-" * 15)
                     accountusername = loginUsername
                     print("Account Name")
@@ -93,18 +93,18 @@ def main():
                     decision = input()
                     if decision == "Gen":
                         characters = string.ascii_letters + string.digits
-                        accountpassword = "".join(choice(characters) for x in range(randint(6, 16)))
+                        accountpassword = "".join(choice(characters) for x in range(randint(8, 15)))
                         print(f"Password: {accountpassword}")
                     elif decision == "Crt":
                         print("Enter your Password")
                         accountpassword = input()
                     else:
-                        print("Please put in correct details")
+                        print("Please put in a valid choice")
                     save_account(create_account(accountusername, accountname, accountpassword))
                     print("\n")
                     print(f"Username:{accountusername} \nAccount Name: {accountname} \nPassword: {accountpassword}")
 
-                elif choose == "View your Account Details":
+                elif choose == "View Account":
                     if find_account(accountusername):
                         print("Here is a list of your created accounts: ")
                         print("-" * 15)
@@ -114,15 +114,15 @@ def main():
                     else:
                         print("Invalid credentials!")
                 else:
-                    print("kindly try again!")
+                    print("Kindly Use Correct Details!")
                     print("\n")
             else:
-                print("Incorrect Details kindly try again!")
+                print("Incorrect Details Kindly try again!")
                 print("\n")
         else:
-            print("Kindly Choose Valid Account Details")
+            print("Kindly choose a correct details")
             print("\n")
 
 
-if __name__ == '__MAIN__':
-    MAIN()
+if __name__ == '__main__':
+    main()
