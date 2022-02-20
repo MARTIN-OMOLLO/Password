@@ -34,7 +34,7 @@ class Testuser(unittest.TestCase):
 
     def test_delete_user(self):
         '''
-        test_delete_details to test if we can remove a details from our details list
+        test_delete_details to test if we can remove a details from our details list.
         '''
         self.new_contact.save_contact()
         test_user = user("Test", "user", "0700000000", "tommorow@martin.com")  # new details
