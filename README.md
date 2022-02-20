@@ -25,6 +25,7 @@ To run the application, in your terminal:
 To run the tests for the class file:
 
   $ python3.9 test.py
+  
 # Technologies Used
 Python3.9
 
