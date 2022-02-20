@@ -23,7 +23,7 @@ class Testuser(unittest.TestCase):
 
         self.assertEqual(self.new_user.user_name, "Martin")
 
-        self.assertEqual(self.new_user.password, "2022M")
+        self.assertEqual(self.new_user.password, "2022M.")
 
     def test_save_user(self):
         '''
