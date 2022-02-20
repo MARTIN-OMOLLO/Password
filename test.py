@@ -40,7 +40,7 @@ class Testuser(unittest.TestCase):
         test_user = user("Test", "user", "0700000000", "tommorow@martin.com")  # new details
         test_user.save_user()
 
-        self.new_user.delete_user()  # Deleting a details object
+        self.new_user.delete_user()  # Deleting a details object.
         self.assertEqual(len(user.user_list), 1)
 
 
